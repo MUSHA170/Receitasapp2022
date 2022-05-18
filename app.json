@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "Receitas-app-22",
+    "slug": "Receitas-app-22",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
