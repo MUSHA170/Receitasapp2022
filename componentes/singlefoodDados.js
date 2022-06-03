@@ -3,9 +3,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {StyleSheet,
         Text,
         View,
-        Image,
-        SafeAreaView,
-        ScrollView,
         ActivityIndicator,
         FlatList,
         TouchableHighlight,
@@ -16,7 +13,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
-import PagID from './singlefoodID'
+import SinglefoodID from './ComidaID'
 
 export default function(props){
 
@@ -74,7 +71,7 @@ export default function(props){
                    data={dados}
                    keyExtractor={item=>item.idMeal}
                    renderItem={({item})=>(
-                        <PagID id={item.idMeal}/>
+                        <SinglefoodID id={item.idMeal}/>
                    )}
                 />
               )

@@ -2,24 +2,18 @@ import React,{useState,useEffect}  from 'react';
 import {StyleSheet,
     Text,
     View,
-    Image,
     TextInput,
     SafeAreaView,
     ScrollView,
     ActivityIndicator,
     FlatList,
-    TouchableHighlight,
-    TouchableOpacity,
-    Modal,
 } from 'react-native';
-import { Feather } from '@expo/vector-icons'; //icones
-import { Ionicons } from '@expo/vector-icons';
 import ComidaDados from './singlefoodDados';
-import PagID from './singlefoodID'
+import ComidaID from './ComidaID'
 
 export default function(){
     const [name, setarTexto] = useState("lasagne");
-    //const name= 'cake'
+
     const[carregando,setCarregando]=useState(true)
     const[dados,setDados]=useState([])
     useEffect(()=>{
@@ -33,47 +27,36 @@ export default function(){
        },[name]
     )
 
-    
-
-    const Rpesq = 123;
-   const Pesquisar=(texto)=>{
-       
-        console.log("pesquisar por  = ",texto);
-    }
-
     return(
         <View>
             <SafeAreaView>
                 <ScrollView style={{padding:10,}}>
-                    <Text>Tela Procurar</Text>
+                    <Text style={styles.teste}>Procurar</Text>
                     <View style={{flexDirection: "row",width:"100%",}}>
                         <TextInput
                             style={styles.input}
-                            placeholder="Pesquisar"
+                            placeholder={name}
                             onEndEditing={(value)=>setarTexto(value.nativeEvent.text)}
                             
                             
                         />
-                        <TouchableHighlight style={styles.btn} onPress={()=>{Pesquisar()}}>
+                        {/* <TouchableHighlight style={styles.btn} onPress={()=>{Pesquisar()}}>
                             <Ionicons name="search" size={24} color="black" />
-                        </TouchableHighlight>
-                    </View>
-                    <Text>texto={name}</Text>
-                    
-                    <View style={styles.cardReceita}>
+                        </TouchableHighlight> */}
+                    </View>            
+                    <View >
                         {
                             carregando?<ActivityIndicator/>:(
                                 <FlatList
                                 data={dados}
                                 keyExtractor={item=>item.idMeal}
                                 renderItem={({item})=>(
-                                        <PagID id={item.idMeal}/>
-                                )}
-                                />
+                                        <ComidaID id={item.idMeal}/>
+                                )}/>
                             )
                         }
                     </View>
-
+       
 
                 </ScrollView>
             </SafeAreaView>
@@ -91,11 +74,12 @@ const styles = StyleSheet.create({
         flex:6,
     },
     btn:{      
-        padding:10,
+        padding:8,
         justifyContent:"center",
         alignItems:"center",
         flex:1,
         backgroundColor:"#7bed8d",
         borderRadius:36,
     },
+
 });
