@@ -35,6 +35,7 @@ export default function(){
             </ImageBackground>
             {/* <CardReceitas/> */}
             <Text>=====COMIDA ALEATORIA=====</Text>
+            <Text>ACORDA PEDRINHO</Text>
             <ComidaAleatoria />
             <Text>=======DESTAQUE=======</Text>
             <SinglefoodID id="52803"/>
