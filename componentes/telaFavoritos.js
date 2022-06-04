@@ -53,7 +53,7 @@ const remover = async () => {
                 }>
             <SafeAreaView style={styles.container}>                
                     <Text style={styles.txt}>TELA FAVORITOS</Text>
-                    <TouchableOpacity style={{alignSelf:'flex-end', position:'absolute',margin:5}} onPress={()=>{remover()}}>
+                    <TouchableOpacity style={{alignSelf:'flex-end', position:'absolute',marginTop:10,}} onPress={()=>{remover()}}>
                         <Ionicons name="trash-outline" size={24} color="gray" />
                     </TouchableOpacity>
                     <TouchableOpacity  onPress={()=>{ getAllKeys()}} style={styles.btnCarregar}>

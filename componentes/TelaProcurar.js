@@ -68,15 +68,17 @@ export default function(){
 const styles = StyleSheet.create({
 
     container:{
-        width:'90%',
-        marginLeft:20,
+        width:'95%',
+        marginLeft:10,
         backgroundColor:'#fff',
     },
 
     input:{      
         height: 40,
         margin: 10,
-        borderWidth: 1,
+        marginBottom:30,
+        borderWidth: 0.5,
+        borderRadius: 20,
         padding: 10,
         flex:6,
     },
@@ -90,7 +92,12 @@ const styles = StyleSheet.create({
     },
 
     teste:{
+        marginTop: 40,
+        marginBottom: 15,
+        color:'#748A9D',
+        fontSize:20,
         paddingLeft:10,
+        alignSelf:'center',
     },
 
 });
