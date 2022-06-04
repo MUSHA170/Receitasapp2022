@@ -11,6 +11,7 @@ import {StyleSheet,
         TouchableHighlight,
         TouchableOpacity,
         Modal,
+        Linking,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -104,16 +105,7 @@ export default function(props){
                                 <Image source={{uri:item.strMealThumb}} style={styles.cardImg}/>
                                 <View style={styles.descricao}>
                                     
-                                        {/*BOTAO SALVO*/}             
-                                        {salvo==true?
-                                        <TouchableOpacity style={styles.mark}  onPress={()=>{ Tirardofavoritos(item.idMeal)}}>
-                                            <Ionicons name="bookmark" size={24} color="black" />
-                                        </TouchableOpacity>
-                                        :
-                                        <TouchableOpacity style={styles.mark}  onPress={()=>{salvarcomida(item.idMeal,item.strMeal)}}> 
-                                            <Ionicons name="bookmark-outline" size={24} color="black" />
-                                        </TouchableOpacity>
-                                        } 
+                                        
                                     {/*NOME DA RECEITA*/}
                                     <Text style={styles.txt}>{item.strMeal}</Text>
                                     {/*DESCRIÇÃO*/}
@@ -130,6 +122,16 @@ export default function(props){
                                         <TouchableHighlight onPress={()=>{setVisivel(false)}} style={styles.botaofechar}>
                                             <Ionicons name="arrow-back" size={24} color="black" />
                                         </TouchableHighlight>
+                                        {/*BOTAO SALVO*/}             
+                                        {salvo==true?
+                                        <TouchableOpacity style={styles.mark}  onPress={()=>{ Tirardofavoritos(item.idMeal)}}>
+                                            <Ionicons name="bookmark" size={24} color="black" />
+                                        </TouchableOpacity>
+                                        :
+                                        <TouchableOpacity style={styles.mark}  onPress={()=>{salvarcomida(item.idMeal,item.strMeal)}}> 
+                                            <Ionicons name="bookmark-outline" size={24} color="black" />
+                                        </TouchableOpacity>
+                                        } 
                                         <Image source={{uri:item.strMealThumb}} style={{width:"100%",height:300,}}/>
                                         <View style={{alignItems:'center'}}>
                                             <Text style={styles.nomeF}>{item.strMeal}</Text>
@@ -162,6 +164,11 @@ export default function(props){
                                         <Text>{item.strIngredient18}</Text>
                                         <Text>{item.strIngredient19}</Text>
                                         <Text>{item.strIngredient20}</Text>
+                                        <Text>=======VIDEO=======</Text>
+                                        <Text style={{color: 'red'}}
+                                            onPress={() => Linking.openURL(item.strYoutube)}>
+                                            Link video tutorial
+                                        </Text>
                                     </View>
                                 </ScrollView>
                             </SafeAreaView>
