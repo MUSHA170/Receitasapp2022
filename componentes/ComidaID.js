@@ -177,12 +177,12 @@ export default function(props){
 
 const styles = StyleSheet.create({
     cardReceita:{
-        backgroundColor: '#F0F4F8',
+        backgroundColor: '#FFF',
         width:'100%',
         marginTop:15,
         marginBottom:5,
         //height:400,
-        borderRadius:36,
+        borderRadius:15,
         paddingBottom:20,
         elevation:5,     
     },
@@ -190,9 +190,11 @@ const styles = StyleSheet.create({
         width:'100%',
         height:250,
         resizeMode:'stretch',
-        borderRadius: 18,
+        borderRadius: 0,
         
     },
+
+    
     txt:{
 
         marginTop:20,

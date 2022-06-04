@@ -44,7 +44,7 @@ const remover = async () => {
     return(
     
     <View style={{flex:1}}>
-        <SafeAreaView>
+        <SafeAreaView style={styles.container}>
             <ScrollView 
                 refreshControl={
                     <RefreshControl
@@ -75,10 +75,16 @@ const remover = async () => {
 }
 
 const styles = StyleSheet.create({
+
+    container:{
+        padding:10,
+    },
+
     scrollvi:{
         alignItems:'center',
         
     },
+
     txt:{
 
         marginLeft:20,

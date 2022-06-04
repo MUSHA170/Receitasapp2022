@@ -34,17 +34,17 @@ export default function(){
                 </View>
             </ImageBackground>
             {/* <CardReceitas/> */}
-            <Text>=====COMIDA ALEATORIA=====</Text>
+            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Aleatória</Text>
             <ComidaAleatoria />
-            <Text>=======DESTAQUE=======</Text>
+            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Destaque</Text>
             <SinglefoodID id="52803"/>
-            <Text>=====SOBREMESA=====</Text>
+            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Sobremesa</Text>
             <SinglefoodID id="52917"/>
-            <Text>=====COMIDA VEGANA=====</Text>          
+            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Vegana</Text>          
             <SinglefoodID id="52775"/>
-            <Text>=====ITALIA=====</Text>  
+            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Italiana</Text>  
             <SinglefoodID id="52771"/>
-            <Text>=====JAPÃO=====</Text>  
+            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Japonesa</Text>  
             <SinglefoodID id="53033"/>
         </SafeAreaView>
       </ScrollView>
@@ -56,12 +56,13 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#F0F4F8',
         alignItems: 'center',
-        //paddingTop:10,
+        padding:10,
       },
+
       bkgimg:{
-        width:'100%',
+        width: '100%',
         height:550,
         
       },
@@ -75,8 +76,7 @@ const styles = StyleSheet.create({
     
       },
       teste: {
-        height: '50%',
-        width: '90%',
+        fontSize: 20,
         backgroundColor: '#AAA',
         marginTop: 100,
       },
