@@ -19,11 +19,19 @@ export default function App() {
 
         <Stack.Screen name="Home" component={Home} options={{
           tabBarIcon:()=>(
-            <Ionicons name="home" size={24} color="black" />
+            <Ionicons name="home-outline" size={24} color="black" />
           )
         }}/>
-        <Stack.Screen name="Favoritos" component={TelaFavoritos} />
-        <Stack.Screen name="Procurar" component={TelaProcurar} />
+        <Stack.Screen name="Favoritos" component={TelaFavoritos} options={{
+          tabBarIcon:()=>(
+            <Ionicons name="star-outline" size={24} color="black" />
+          )
+        }}/>
+        <Stack.Screen name="Procurar" component={TelaProcurar} options={{
+          tabBarIcon:()=>(
+            <Ionicons name="search-outline" size={24} color="black" />
+          )
+        }} />
 
       </Stack.Navigator>
     </NavigationContainer>
