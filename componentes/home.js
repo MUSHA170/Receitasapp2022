@@ -28,6 +28,7 @@ export default function(){
             <StatusBar hidden={true} />
             <ImageBackground  style = {styles.bkgimg}  imageStyle={{borderBottomLeftRadius: 36,borderBottomRightRadius: 36,}}source={require('../assets/n7qnkb1630444129.jpg')} resizeMode="cover">
                 <Text style={styles.img}>Home</Text>
+                <Text> Oiiiiiiiiii</Text>
                 <View style={{backgroundColor:'rgba(0, 0, 0, 0.30)'}}>
                   <Text style={{fontSize:30,alignSelf:'center',color:'#7bed8d'}}>Chivito uruguayo</Text>
                   <Text style={{fontSize:15,alignSelf:'center',color:'#fff'}}>Nova Receita</Text>
