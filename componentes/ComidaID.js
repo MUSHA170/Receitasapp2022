@@ -126,7 +126,7 @@ export default function(props){
                         <Modal animationType='fade' visible={visivel}>
                             <SafeAreaView>
                                 <ScrollView >
-                                    <View style={{padding:5,}}>
+                                    <View style={{padding:5,backgroundColor:'#effc97'}}>
                                         <TouchableHighlight onPress={()=>{setVisivel(false)}} style={styles.botaofechar}>
                                             <Ionicons name="arrow-back" size={24} color="black" />
                                         </TouchableHighlight>
@@ -189,6 +189,7 @@ const styles = StyleSheet.create({
         
     },
     cardImg:{
+        backgroundColor: '#F0F4F8',
         width:'100%',
         height:250,
         resizeMode:'stretch',
@@ -232,7 +233,7 @@ const styles = StyleSheet.create({
     },
     nomeF:{
         fontSize:20,
-        color:"#ff6a28",
+        color:"#000000",
 
     },
     instF:{
@@ -246,7 +247,7 @@ const styles = StyleSheet.create({
     textcenter:{
         flex:1,
         alignSelf: 'center',
-        color:'#ff6a28',
+        color:'#000000',
     },
 
     

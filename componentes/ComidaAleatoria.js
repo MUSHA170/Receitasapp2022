@@ -14,7 +14,6 @@ import {StyleSheet,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-
 export default function(props){
 
 
@@ -83,95 +82,94 @@ export default function(props){
         }
         console.log('Tirado do Salvo')
     }
+    
 
 
 
 
     return(
-       <View style={styles.cardReceita}>
-           {
-               carregando?<ActivityIndicator/>:(
-                <FlatList
-                   data={dados}
-                   keyExtractor={item=>item.idMeal}
-                   renderItem={({item})=>(
-                    <View>
-                        {/*CARD RECEITA*/}
-                        <TouchableHighlight  onPress={()=>{setVisivel(true)}}>
-                            <View>
-                                
-                                {/*IMAGEM DA COMIDA*/}   
-                                <Image source={{uri:item.strMealThumb}} style={styles.cardImg}/>
-                                <View style={styles.descricao}>
-                                    
-                                        {/*BOTAO SALVO*/}             
-                                        {salvo==true?
-                                        <TouchableOpacity style={styles.mark}  onPress={()=>{ Tirardofavoritos(item.idMeal)}}>
-                                            <Ionicons name="bookmark" size={24} color="black" />
-                                        </TouchableOpacity>
-                                        :
-                                        <TouchableOpacity style={styles.mark}  onPress={()=>{salvarcomida(item.idMeal,item.strMeal)}}> 
-                                            <Ionicons name="bookmark-outline" size={24} color="black" />
-                                        </TouchableOpacity>
-                                        } 
-                                    {/*NOME DA RECEITA*/}
-                                    <Text style={styles.txt}>{item.strMeal}</Text>
-                                    {/*DESCRIÇÃO*/}
-                                    <Text style={styles.txtdesc} >{item.strCategory}</Text>                      
-                                </View>
-                            </View>
-                        </TouchableHighlight>
 
-                        {/*PAGINA RECEITA*/}
-                        <Modal animationType='fade' visible={visivel}>
-                            <SafeAreaView>
-                                <ScrollView >
-                                    <View style={{padding:5,}}>
-                                        <TouchableHighlight onPress={()=>{setVisivel(false)}} style={styles.botaofechar}>
-                                            <Ionicons name="arrow-back" size={24} color="black" />
-                                        </TouchableHighlight>
-                                        <Image source={{uri:item.strMealThumb}} style={{width:"100%",height:300,}}/>
-                                        <View style={{alignItems:'center'}}>
-                                            <Text style={styles.nomeF}>{item.strMeal}</Text>
+        <View style={styles.cardReceita}>
+                {carregando ? <ActivityIndicator /> : (
+                    <FlatList
+                        data={dados}
+                        keyExtractor={item => item.idMeal}
+                        renderItem={({ item }) => (
+                            <View>
+                                {/*CARD RECEITA*/}
+                                <TouchableHighlight onPress={() => { setVisivel(true); } }>
+                                    <View>
+
+                                        {/*IMAGEM DA COMIDA*/}
+                                        <Image source={{ uri: item.strMealThumb }} style={styles.cardImg} />
+                                        <View style={styles.descricao}>
+
+                                            {/*BOTAO SALVO*/}
+                                            {salvo == true ?
+                                                <TouchableOpacity style={styles.mark} onPress={() => { Tirardofavoritos(item.idMeal); } }>
+                                                    <Ionicons name="bookmark" size={24} color="black" />
+                                                </TouchableOpacity>
+                                                :
+                                                <TouchableOpacity style={styles.mark} onPress={() => { salvarcomida(item.idMeal, item.strMeal); } }>
+                                                    <Ionicons name="bookmark-outline" size={24} color="black" />
+                                                </TouchableOpacity>}
+                                            {/*NOME DA RECEITA*/}
+                                            <Text style={styles.txt}>{item.strMeal}</Text>
+                                            {/*DESCRIÇÃO*/}
+                                            <Text style={styles.txtdesc}>{item.strCategory}</Text>
                                         </View>
-                                        <Text></Text>
-                                        <View style={styles.instFContainer}>
-                                            <Text style={styles.textcenter}>INSTRUÇÕES</Text>
-                                            <Text style={styles.instF}>{item.strInstructions}</Text>
-                                        <Text>__________________________________________________________</Text>
-                                        </View>
-                                        <Text style={styles.textcenter}>INGREDIENTES</Text>
-                                        <Text>{item.strIngredient1}</Text>
-                                        <Text>{item.strIngredient2}</Text>
-                                        <Text>{item.strIngredient3}</Text>
-                                        <Text>{item.strIngredient4}</Text>
-                                        <Text>{item.strIngredient5}</Text>
-                                        <Text>{item.strIngredient6}</Text>
-                                        <Text>{item.strIngredient7}</Text>
-                                        <Text>{item.strIngredient8}</Text>
-                                        <Text>{item.strIngredient9}</Text>
-                                        <Text>{item.strIngredient10}</Text>
-                                        <Text>{item.strIngredient11}</Text>
-                                        <Text>{item.strIngredient12}</Text>
-                                        <Text>{item.strIngredient13}</Text>
-                                        <Text>{item.strIngredient14}</Text>
-                                        <Text>{item.strIngredient15}</Text>
-                                        <Text>{item.strIngredient16}</Text>
-                                        <Text>{item.strIngredient17}</Text>
-                                        <Text>{item.strIngredient18}</Text>
-                                        <Text>{item.strIngredient19}</Text>
-                                        <Text>{item.strIngredient20}</Text>
                                     </View>
-                                </ScrollView>
-                            </SafeAreaView>
-                        </Modal>
-                    </View>
-                   )}
-                />
-              )
-           }
-                        
-       </View>
+                                </TouchableHighlight>
+
+                                {/*PAGINA RECEITA*/}
+                                <Modal animationType='fade' visible={visivel}>
+                                    <SafeAreaView>
+                                        <ScrollView>
+                                            <View style={{ padding: 5, }}>
+                                                <TouchableHighlight onPress={() => { setVisivel(false); } } style={styles.botaofechar}>
+                                                    <Ionicons name="arrow-back" size={24} color="black" />
+                                                </TouchableHighlight>
+                                                <Image source={{ uri: item.strMealThumb }} style={{ width: "100%", height: 300, }} />
+                                                <View style={{ alignItems: 'center' }}>
+                                                    <Text style={styles.nomeF}>{item.strMeal}</Text>
+                                                </View>
+                                                <Text></Text>
+                                                <View style={styles.instFContainer}>
+                                                    <Text style={styles.textcenter}>INSTRUÇÕES</Text>
+                                                    <Text style={styles.instF}>{item.strInstructions}</Text>
+                                                    <Text>__________________________________________________________</Text>
+                                                </View>
+                                                <Text style={styles.textcenter}>INGREDIENTES</Text>
+                                                <Text>{item.strIngredient1}</Text>
+                                                <Text>{item.strIngredient2}</Text>
+                                                <Text>{item.strIngredient3}</Text>
+                                                <Text>{item.strIngredient4}</Text>
+                                                <Text>{item.strIngredient5}</Text>
+                                                <Text>{item.strIngredient6}</Text>
+                                                <Text>{item.strIngredient7}</Text>
+                                                <Text>{item.strIngredient8}</Text>
+                                                <Text>{item.strIngredient9}</Text>
+                                                <Text>{item.strIngredient10}</Text>
+                                                <Text>{item.strIngredient11}</Text>
+                                                <Text>{item.strIngredient12}</Text>
+                                                <Text>{item.strIngredient13}</Text>
+                                                <Text>{item.strIngredient14}</Text>
+                                                <Text>{item.strIngredient15}</Text>
+                                                <Text>{item.strIngredient16}</Text>
+                                                <Text>{item.strIngredient17}</Text>
+                                                <Text>{item.strIngredient18}</Text>
+                                                <Text>{item.strIngredient19}</Text>
+                                                <Text>{item.strIngredient20}</Text>
+                                            </View>
+                                        </ScrollView>
+                                    </SafeAreaView>
+                                </Modal>
+                            </View>
+                        )} />
+                )}
+
+            </View>
+       
     )
 } 
 
