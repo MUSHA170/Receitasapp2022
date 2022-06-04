@@ -88,5 +88,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#AAA',
         marginTop: 100,
       },
-     
+      
 });

@@ -17,6 +17,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 export default function(props){
 
+    
 
         //PEGANDO DADOS DO MEALDB PELO ID
     let id = props.id
@@ -32,12 +33,11 @@ export default function(props){
             pegarListaFavoritos()
        },[]
     )
+    
 
         //Modal/Poppup/pagina da receita/ pagina de informaçãoes detalhadas
     const[visivel,setVisivel]=useState(false)
   
-    
-
     //ver se ja esta salvo
     ///async storage///
     //const[listadeFavoritos,setlistadeFavoritos]=useState([])
@@ -126,21 +126,22 @@ export default function(props){
                         <Modal animationType='fade' visible={visivel}>
                             <SafeAreaView>
                                 <ScrollView >
-                                    <View style={{padding:5,}}>
+                                    <View style={{padding:5,backgroundColor:'#effc97'}}>
                                         <TouchableHighlight onPress={()=>{setVisivel(false)}} style={styles.botaofechar}>
                                             <Ionicons name="arrow-back" size={24} color="black" />
                                         </TouchableHighlight>
                                         <Image source={{uri:item.strMealThumb}} style={{width:"100%",height:300,}}/>
                                         <View style={{alignItems:'center'}}>
-                                            <Text style={styles.nomeF}>nome = {item.strMeal}</Text>
+                                            <Text style={styles.nomeF}>{item.strMeal}</Text>
+                                            
                                         </View>
-                                        <Text>categoria = {item.strCategory}</Text>
+                                        <Text></Text>
                                         <View style={styles.instFContainer}>
-                                            <Text>============INSTRUÇÕES============</Text>
+                                            <Text style={styles.textcenter}>INSTRUÇÕES</Text>
                                             <Text style={styles.instF}>{item.strInstructions}</Text>
-                                        <Text>==================================</Text>
+                                        <Text>__________________________________________________________</Text>
                                         </View>
-                                        <Text>Ingredientes</Text>
+                                        <Text style={styles.textcenter}>INGREDIENTES</Text>
                                         <Text>{item.strIngredient1}</Text>
                                         <Text>{item.strIngredient2}</Text>
                                         <Text>{item.strIngredient3}</Text>
@@ -185,8 +186,10 @@ const styles = StyleSheet.create({
         borderRadius:10,
         paddingBottom:20,
         elevation:5,     
+        
     },
     cardImg:{
+        backgroundColor: '#F0F4F8',
         width:'100%',
         height:250,
         resizeMode:'stretch',
@@ -231,7 +234,7 @@ const styles = StyleSheet.create({
     },
     nomeF:{
         fontSize:20,
-        color:"red",
+        color:"#000000",
 
     },
     instF:{
@@ -241,5 +244,12 @@ const styles = StyleSheet.create({
     instFContainer:{
         justifyContent:'center',
         alignItems:'center',
-    }
+    },
+    textcenter:{
+        flex:1,
+        alignSelf: 'center',
+        color:'#000000',
+    },
+
+    
 });
