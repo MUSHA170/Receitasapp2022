@@ -29,9 +29,9 @@ export default function(){
 
     return(
         <View>
-            <SafeAreaView>
-                <ScrollView style={{padding:10,}}>
-                    <Text style={styles.teste}>Procurar</Text>
+            <SafeAreaView style={{backgroundColor:'#fff',}}>
+                <ScrollView style={{padding:20,}}>
+                    <Text style={styles.teste}>Procurar Receitas</Text>
                     <View style={{flexDirection: "row",width:"100%",}}>
                         <TextInput
                             style={styles.input}
@@ -44,7 +44,7 @@ export default function(){
                             <Ionicons name="search" size={24} color="black" />
                         </TouchableHighlight> */}
                     </View>            
-                    <View >
+                    <View style={styles.container} >
                         {
                             carregando?<ActivityIndicator/>:(
                                 <FlatList
@@ -66,6 +66,13 @@ export default function(){
 }
 
 const styles = StyleSheet.create({
+
+    container:{
+        width:'90%',
+        marginLeft:20,
+        backgroundColor:'#fff',
+    },
+
     input:{      
         height: 40,
         margin: 10,
@@ -80,6 +87,10 @@ const styles = StyleSheet.create({
         flex:1,
         backgroundColor:"#7bed8d",
         borderRadius:36,
+    },
+
+    teste:{
+        paddingLeft:10,
     },
 
 });

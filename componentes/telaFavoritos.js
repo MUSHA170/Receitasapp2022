@@ -44,31 +44,31 @@ const remover = async () => {
     return(
     
     <View style={{flex:1}}>
-        <SafeAreaView style={styles.container}>
-            <ScrollView 
+        <ScrollView 
                 refreshControl={
                     <RefreshControl
                         refreshing={atualizando}
                         onRefresh={aoAtualizar}
                     />
                 }>
-                <Text style={styles.txt}>TELA FAVORITOS</Text>
-                <TouchableOpacity style={{alignSelf:'flex-end', position:'absolute',margin:5}} onPress={()=>{remover()}}>
-                    <Ionicons name="trash-outline" size={24} color="black" />
-                </TouchableOpacity>
-                <TouchableOpacity  onPress={()=>{ getAllKeys()}} style={styles.btnCarregar}>
-                    {/* <Ionicons name="reload-circle-outline" size={30} color="black" /> */}
-                    <Text>ATUALIZAR</Text>
-                </TouchableOpacity>
-                <View style={styles.scrollvi}>
-                    {
-                        key.map(i=>(
-                            <SinglefoodID id={i}/>
-                        ))
-                    }
-                </View>
-            </ScrollView>
-        </SafeAreaView>
+            <SafeAreaView style={styles.container}>                
+                    <Text style={styles.txt}>TELA FAVORITOS</Text>
+                    <TouchableOpacity style={{alignSelf:'flex-end', position:'absolute',margin:5}} onPress={()=>{remover()}}>
+                        <Ionicons name="trash-outline" size={24} color="gray" />
+                    </TouchableOpacity>
+                    <TouchableOpacity  onPress={()=>{ getAllKeys()}} style={styles.btnCarregar}>
+                        {/* <Ionicons name="reload-circle-outline" size={30} color="black" /> */}
+                        <Text style={{color:'#fff',}}>ATUALIZAR</Text>
+                    </TouchableOpacity>
+                    <View style={styles.scrollvi}>
+                        {
+                            key.map(i=>(
+                                <SinglefoodID id={i}/>
+                            ))
+                        }
+                    </View>                
+            </SafeAreaView>
+        </ScrollView>
     </View>
 
     )
@@ -77,29 +77,34 @@ const remover = async () => {
 const styles = StyleSheet.create({
 
     container:{
-        padding:10,
+        margin:10,
     },
 
     scrollvi:{
         alignItems:'center',
+        width:'90%',
+        marginTop:30,
+        marginLeft:20,
         
     },
 
     txt:{
-
         marginLeft:20,
-        color: '#fff',
-        //backgroundColor: '#fff',
-        padding: 0,
+        color: 'gray',
+        //backgroundColor: 'red',
         //borderRadius: 100,
-        fontSize:15,
-        
+        paddingTop: 10,        
+        fontSize:15, 
     },
+
     btnCarregar:{
+        width:'80%',
         backgroundColor:"#7bed8d",
+        color: '#FFF',
         borderRadius:36,
-        margin:10,
-        padding:10,
+        marginTop:30,
+        marginLeft:40,
+        padding:15,
         alignItems:'center',
     }
 

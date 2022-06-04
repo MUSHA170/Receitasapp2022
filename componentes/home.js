@@ -26,26 +26,28 @@ export default function(){
       <ScrollView>
         <SafeAreaView style={styles.container}>
             <StatusBar hidden={true} />
-            <ImageBackground  style = {styles.bkgimg}  imageStyle={{borderBottomLeftRadius: 36,borderBottomRightRadius: 36,}}source={require('../assets/n7qnkb1630444129.jpg')} resizeMode="cover">
-                <Text style={styles.img}>Home</Text>
-                <View style={{backgroundColor:'rgba(0, 0, 0, 0.30)'}}>
+            <ImageBackground  style = {styles.bkgimg}  imageStyle={{borderBottomLeftRadius: 40,borderBottomRightRadius: 40, marginLeft: -5,}}source={require('../assets/n7qnkb1630444129.jpg')} resizeMode="cover">
+                <Text style={styles.img}></Text>
+                <View style={{backgroundColor:'rgba(0, 0, 0, 0.30)', width:'105%',marginLeft:-5,}}>
                   <Text style={{fontSize:30,alignSelf:'center',color:'#7bed8d'}}>Chivito uruguayo</Text>
                   <Text style={{fontSize:15,alignSelf:'center',color:'#fff'}}>Nova Receita</Text>
                 </View>
             </ImageBackground>
             {/* <CardReceitas/> */}
-            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Aleatória</Text>
-            <ComidaAleatoria />
-            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Destaque</Text>
-            <SinglefoodID id="52803"/>
-            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Sobremesa</Text>
-            <SinglefoodID id="52917"/>
-            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Vegana</Text>          
-            <SinglefoodID id="52775"/>
-            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Italiana</Text>  
-            <SinglefoodID id="52771"/>
-            <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Japonesa</Text>  
-            <SinglefoodID id="53033"/>
+            <View style={styles.section}>
+              <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Aleatória</Text>
+              <ComidaAleatoria />
+              <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Destaque</Text>
+              <SinglefoodID id="52803"/>
+              <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Sobremesa</Text>
+              <SinglefoodID id="52917"/>
+              <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Vegana</Text>          
+              <SinglefoodID id="52775"/>
+              <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Italiana</Text>  
+              <SinglefoodID id="52771"/>
+              <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Japonesa</Text>  
+              <SinglefoodID id="53033"/>
+            </View> 
         </SafeAreaView>
       </ScrollView>
     </View>
@@ -56,14 +58,20 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        backgroundColor: '#F0F4F8',
+        backgroundColor: '#FFF',
         alignItems: 'center',
-        padding:10,
+        padding: 10,
+      },
+
+      section:{
+        width: '90%',
       },
 
       bkgimg:{
-        width: '100%',
+        marginTop: -10,
+        width: '103%',
         height:550,
+        padding: 1,
         
       },
       img: {

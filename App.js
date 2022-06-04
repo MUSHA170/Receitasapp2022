@@ -15,21 +15,21 @@ const Stack = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home" screenOptions={{tabBarShowLabel:true,headerShown:true,}}>
+      <Stack.Navigator initialRouteName="Home" screenOptions={{tabBarShowLabel:true,headerShown:false,}}>
 
         <Stack.Screen name="Home" component={Home} options={{
           tabBarIcon:()=>(
-            <Ionicons name="home-outline" size={24} color="black" />
+            <Ionicons name="home-outline" size={24} color="gray" />
           )
         }}/>
         <Stack.Screen name="Favoritos" component={TelaFavoritos} options={{
           tabBarIcon:()=>(
-            <Ionicons name="star-outline" size={24} color="black" />
+            <Ionicons name="star-outline" size={24} color="gray" />
           )
         }}/>
         <Stack.Screen name="Procurar" component={TelaProcurar} options={{
           tabBarIcon:()=>(
-            <Ionicons name="search-outline" size={24} color="black" />
+            <Ionicons name="search-outline" size={24} color="gray" />
           )
         }} />
 
@@ -42,7 +42,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#748A9D',
     alignItems: 'center',
     justifyContent: 'center',
   },
