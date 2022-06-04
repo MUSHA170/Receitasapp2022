@@ -132,15 +132,15 @@ export default function(props){
                                         </TouchableHighlight>
                                         <Image source={{uri:item.strMealThumb}} style={{width:"100%",height:300,}}/>
                                         <View style={{alignItems:'center'}}>
-                                            <Text style={styles.nomeF}>nome = {item.strMeal}</Text>
+                                            <Text style={styles.nomeF}>{item.strMeal}</Text>
                                         </View>
-                                        <Text>categoria = {item.strCategory}</Text>
+                                        <Text></Text>
                                         <View style={styles.instFContainer}>
-                                            <Text>============INSTRUÇÕES============</Text>
+                                            <Text style={styles.textcenter}>INSTRUÇÕES</Text>
                                             <Text style={styles.instF}>{item.strInstructions}</Text>
-                                        <Text>==================================</Text>
+                                        <Text>__________________________________________________________</Text>
                                         </View>
-                                        <Text>Ingredientes</Text>
+                                        <Text style={styles.textcenter}>INGREDIENTES</Text>
                                         <Text>{item.strIngredient1}</Text>
                                         <Text>{item.strIngredient2}</Text>
                                         <Text>{item.strIngredient3}</Text>
@@ -230,7 +230,7 @@ const styles = StyleSheet.create({
     },
     nomeF:{
         fontSize:20,
-        color:"red",
+        color:"#ff6a28",
 
     },
     instF:{
@@ -240,5 +240,10 @@ const styles = StyleSheet.create({
     instFContainer:{
         justifyContent:'center',
         alignItems:'center',
-    }
+    },
+    textcenter:{
+        flex:1,
+        alignSelf: 'center',
+        color:'#ff6a28',
+    },
 });

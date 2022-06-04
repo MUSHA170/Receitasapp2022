@@ -34,18 +34,17 @@ export default function(){
                 </View>
             </ImageBackground>
             {/* <CardReceitas/> */}
-            <Text>=====COMIDA ALEATORIA=====</Text>
-            <Text>ACORDA PEDRINHO</Text>
-            <ComidaAleatoria />
-            <Text>=======DESTAQUE=======</Text>
+            <Text>RECEITA ALEATORIA</Text>
+            <ComidaAleatoria/>
+            <Text>DESTAQUE</Text>
             <SinglefoodID id="52803"/>
-            <Text>=====SOBREMESA=====</Text>
+            <Text>SOBREMESA</Text>
             <SinglefoodID id="52917"/>
-            <Text>=====COMIDA VEGANA=====</Text>          
+            <Text>COMIDA VEGANA</Text>          
             <SinglefoodID id="52775"/>
-            <Text>=====ITALIA=====</Text>  
+            <Text>ITÁLIA</Text>  
             <SinglefoodID id="52771"/>
-            <Text>=====JAPÃO=====</Text>  
+            <Text>JAPÃO</Text>  
             <SinglefoodID id="53033"/>
         </SafeAreaView>
       </ScrollView>
@@ -81,5 +80,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#AAA',
         marginTop: 100,
       },
-     
+      
 });
