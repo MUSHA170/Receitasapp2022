@@ -249,11 +249,11 @@ const styles = StyleSheet.create({
     },
     nomeF:{
         fontSize:20,
-        color:"#6b99c9",
+        color:"#748A9D",
 
     },
     instF:{
-        
+        color:'#748A9D',
         padding:10,
     },
     instFContainer:{
