@@ -11,8 +11,10 @@ import {StyleSheet,
         TouchableHighlight,
         TouchableOpacity,
         Modal,
+        Linking
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { back } from 'react-native/Libraries/Animated/Easing';
 
 export default function(props){
 
@@ -129,16 +131,29 @@ export default function(props){
                                                 <TouchableHighlight onPress={() => { setVisivel(false); } } style={styles.botaofechar}>
                                                     <Ionicons name="arrow-back" size={24} color="black" />
                                                 </TouchableHighlight>
-                                                <Image source={{ uri: item.strMealThumb }} style={{ width: "100%", height: 300, }} />
+
+                                            {/*BOTAO SALVO*/}             
+                                             {salvo==true?
+                                        <TouchableOpacity style={styles.mark}  onPress={()=>{ Tirardofavoritos(item.idMeal)}}>
+                                            <Ionicons name="bookmark" size={24} color="black" />
+                                        </TouchableOpacity>
+                                        :
+                                        <TouchableOpacity style={styles.mark}  onPress={()=>{salvarcomida(item.idMeal,item.strMeal)}}> 
+                                            <Ionicons name="bookmark-outline" size={24} color="black" />
+                                        </TouchableOpacity>
+                                        } 
                                                 <View style={{ alignItems: 'center' }}>
                                                     <Text style={styles.nomeF}>{item.strMeal}</Text>
+                                                    <Text></Text>
                                                 </View>
+                                                <Image source={{ uri: item.strMealThumb }} style={{ width: "100%", height: 280,borderRadius:30, }} />
                                                 <Text></Text>
                                                 <View style={styles.instFContainer}>
                                                     <Text style={styles.textcenter}>INSTRUÇÕES</Text>
                                                     <Text style={styles.instF}>{item.strInstructions}</Text>
                                                     <Text>__________________________________________________________</Text>
                                                 </View>
+                                                <View style={styles.ing}>
                                                 <Text style={styles.textcenter}>INGREDIENTES</Text>
                                                 <Text>{item.strIngredient1}</Text>
                                                 <Text>{item.strIngredient2}</Text>
@@ -160,6 +175,14 @@ export default function(props){
                                                 <Text>{item.strIngredient18}</Text>
                                                 <Text>{item.strIngredient19}</Text>
                                                 <Text>{item.strIngredient20}</Text>
+                                                </View>
+                                                <TouchableHighlight 
+                                                 onPress={() => Linking.openURL(item.strYoutube)}
+                                                    style = {{backgroundColor:'#2aad23',padding:10,alignSelf:'center',borderRadius:120}}>
+                                                    <Text>
+                                                        VÍDEO
+                                                    </Text>
+                                                </TouchableHighlight>
                                             </View>
                                         </ScrollView>
                                     </SafeAreaView>
@@ -168,11 +191,9 @@ export default function(props){
                         )} />
                 )}
 
-            </View>
-       
+            </View>    
     )
 } 
-
 const styles = StyleSheet.create({
     cardReceita:{
         backgroundColor: '#F0F4F8',
@@ -180,7 +201,7 @@ const styles = StyleSheet.create({
         marginTop:15,
         marginBottom:5,
         //height:400,
-        borderRadius:10,
+        borderRadius:36,
         paddingBottom:20,
         elevation:5,     
     },
@@ -188,7 +209,7 @@ const styles = StyleSheet.create({
         width:'100%',
         height:250,
         resizeMode:'stretch',
-        borderRadius: 10,
+        borderRadius: 18,
         
     },
     txt:{
@@ -228,7 +249,7 @@ const styles = StyleSheet.create({
     },
     nomeF:{
         fontSize:20,
-        color:"#ff6a28",
+        color:"#6b99c9",
 
     },
     instF:{
@@ -242,6 +263,10 @@ const styles = StyleSheet.create({
     textcenter:{
         flex:1,
         alignSelf: 'center',
-        color:'#ff6a28',
+        color:'#2aad23',
+    },
+    ing:{
+        elevation:5,
+        color:"#4223db"
     },
 });
