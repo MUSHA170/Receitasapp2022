@@ -8,7 +8,6 @@ import {StyleSheet,
     ActivityIndicator,
     FlatList,
 } from 'react-native';
-import ComidaDados from './singlefoodDados';
 import ComidaID from './ComidaID'
 
 export default function(){

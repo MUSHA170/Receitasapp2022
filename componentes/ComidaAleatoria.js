@@ -106,15 +106,6 @@ export default function(props){
                                         <Image source={{ uri: item.strMealThumb }} style={styles.cardImg} />
                                         <View style={styles.descricao}>
 
-                                            {/*BOTAO SALVO*/}
-                                            {salvo == true ?
-                                                <TouchableOpacity style={styles.mark} onPress={() => { Tirardofavoritos(item.idMeal); } }>
-                                                    <Ionicons name="bookmark" size={24} color="black" />
-                                                </TouchableOpacity>
-                                                :
-                                                <TouchableOpacity style={styles.mark} onPress={() => { salvarcomida(item.idMeal, item.strMeal); } }>
-                                                    <Ionicons name="bookmark-outline" size={24} color="black" />
-                                                </TouchableOpacity>}
                                             {/*NOME DA RECEITA*/}
                                             <Text style={styles.txt}>{item.strMeal}</Text>
                                             {/*DESCRIÇÃO*/}

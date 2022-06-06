@@ -38,7 +38,6 @@ const remover = async () => {
     } catch(e) {
       // clear error
     }
-  
     console.log('Removido')
   }
     return(
@@ -61,11 +60,11 @@ const remover = async () => {
                         <Text style={{color:'#fff',}}>ATUALIZAR</Text>
                     </TouchableOpacity>
                     <View style={styles.scrollvi}>
-                        {
+                            {
                             key.map(i=>(
                                 <SinglefoodID id={i}/>
                             ))
-                        }
+                            }
                     </View>                
             </SafeAreaView>
         </ScrollView>

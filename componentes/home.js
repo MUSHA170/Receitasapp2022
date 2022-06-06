@@ -13,11 +13,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-//import CardReceitas from './CardReceitaAleatoria'
-import Header from './header'
-//import ComidaAleatoria from './singlefoodAleatorio'
 import ComidaAleatoria from './ComidaAleatoria'
-import SinglefoodID from './ComidaID'
+import ComidaID from './ComidaID'
 
 export default function(){
 
@@ -38,15 +35,15 @@ export default function(){
               <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Aleatória</Text>
               <ComidaAleatoria />
               <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Destaque</Text>
-              <SinglefoodID id="52803"/>
+              <ComidaID id="52803"/>
               <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Sobremesa</Text>
-              <SinglefoodID id="52917"/>
+              <ComidaID id="52917"/>
               <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Vegana</Text>          
-              <SinglefoodID id="52775"/>
+              <ComidaID id="52775"/>
               <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Italiana</Text>  
-              <SinglefoodID id="52771"/>
+              <ComidaID id="52771"/>
               <Text style={{fontSize:19, fontWeight:'bold', alignSelf:'flex-start', marginTop: 15,}}>Comida Japonesa</Text>  
-              <SinglefoodID id="53033"/>
+              <ComidaID id="53033"/>
             </View> 
         </SafeAreaView>
       </ScrollView>
