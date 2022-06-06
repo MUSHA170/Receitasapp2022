@@ -12,19 +12,19 @@ import ComidaDados from './singlefoodDados';
 import ComidaID from './ComidaID'
 
 export default function(){
-    const [name, setarTexto] = useState("lasagne");
+    const [texto, setarTexto] = useState("");
 
     const[carregando,setCarregando]=useState(true)
     const[dados,setDados]=useState([])
     useEffect(()=>{
             
-            fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+name)
+            fetch('https://www.themealdb.com/api/json/v1/1/search.php?s='+texto)
                 .then((resp)=>resp.json())
                 .then((json)=>setDados(json.meals))
                 .catch(()=>(alert('Erro ao carregar lista de comidas')))
                 .finally(()=>setCarregando(false))
             
-       },[name]
+       },[texto]
     )
 
     return(
@@ -35,10 +35,8 @@ export default function(){
                     <View style={{flexDirection: "row",width:"100%",}}>
                         <TextInput
                             style={styles.input}
-                            placeholder={name}
-                            onEndEditing={(value)=>setarTexto(value.nativeEvent.text)}
-                            
-                            
+                            placeholder={texto}
+                            onEndEditing={(value)=>setarTexto(value.nativeEvent.text)}                
                         />
                         {/* <TouchableHighlight style={styles.btn} onPress={()=>{Pesquisar()}}>
                             <Ionicons name="search" size={24} color="black" />
